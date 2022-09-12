@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "colorName": "Apple Mint",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 2,
+        "colorName": "Charcoal",
+        "colorCategoryId": 2
+    },
+    {
+        "id": 3,
+        "colorName": "Nougat",
+        "colorCategoryId": 2
+    },
+    {
+        "id": 4,
+        "colorName": "Eclipse Melange",
+        "colorCategoryId": 2
+    },
+    {
+        "id": 5,
+        "colorName": "Natural",
+        "colorCategoryId": 2
+    },
+    {
+        "id": 6,
+        "colorName": "Orange Selenite",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 7,
+        "colorName": "Lavender Fog",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 8,
+        "colorName": "Graphite",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 9,
+        "colorName": "Palm Leaf",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 10,
+        "colorName": "Jacaranda",
+        "colorCategoryId": 1
+    },
+    {
+        "id": 11,
+        "colorName": "Golden Harvest",
+        "colorCategoryId": 1
+    }
+]

@@ -1,0 +1,4 @@
+[
+    { "id": 1, "name": "Buddhi Perera", "email": "buddi@gmail.com", "password": "helloworld", "userType": "ADMIN", "status": "ACTIVE" },
+    { "id": 2, "name": "Employee 1", "email": "e1@gmail.com", "password": "helloworld", "userType": "GENERAL_EMPLOYEE", "status": "ACTIVE" }
+]

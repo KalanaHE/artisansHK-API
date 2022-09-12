@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "packageSizeName": "550g",
+        "packageWeight": 550
+    },
+    {
+        "id": 2,
+        "packageSizeName": "100g",
+        "packageWeight": 100
+    },
+    {
+        "id": 3,
+        "packageSizeName": "50g",
+        "packageWeight": 50
+    }
+]

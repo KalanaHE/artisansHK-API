@@ -1,0 +1,848 @@
+[
+    {
+        "id": 1,
+        "villageCode": "1-A",
+        "villageName": "SALIYAPURA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 2,
+        "villageCode": "1-B",
+        "villageName": "KENDAGASMANKADA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 3,
+        "villageCode": "1-C",
+        "villageName": "SITHUMINIWELA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 4,
+        "villageCode": "1-D",
+        "villageName": "SEENIMUNNA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 5,
+        "villageCode": "2-A",
+        "villageName": "METHSEWANA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 6,
+        "villageCode": "2-C",
+        "villageName": "YODHAKANDIYA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 7,
+        "villageCode": "2-D",
+        "villageName": "SIRIYAGAMA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 8,
+        "villageCode": "3-A",
+        "villageName": "BOKUTUPELESSA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 9,
+        "villageCode": "3-B",
+        "villageName": "MALPETHTHAWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 10,
+        "villageCode": "3-C",
+        "villageName": "SAMANPURA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 11,
+        "villageCode": "3-D",
+        "villageName": "SISILASAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 12,
+        "villageCode": "4-A",
+        "villageName": "IKKAPALLAMA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 13,
+        "villageCode": "4-B",
+        "villageName": "PANNEGAMUWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 14,
+        "villageCode": "4-C",
+        "villageName": "BERAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 15,
+        "villageCode": "4-D",
+        "villageName": "SEENUKKUWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 16,
+        "villageCode": "5-A",
+        "villageName": "AKURUGODA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 17,
+        "villageCode": "5-B",
+        "villageName": "BANDAGIRIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 18,
+        "villageCode": "5-C",
+        "villageName": "BERALIHELA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 19,
+        "villageCode": "5-D",
+        "villageName": "JULPALLAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 20,
+        "villageCode": "6-A",
+        "villageName": "GEMUNUPURA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 21,
+        "villageCode": "6-B",
+        "villageName": "MAHANAGAPURA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 22,
+        "villageCode": "6-C",
+        "villageName": "MOLAKEPUPATHANA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 23,
+        "villageCode": "6-D",
+        "villageName": "LUNUGAMWEHERA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 24,
+        "villageCode": "7-A",
+        "villageName": "GANGASIRIPURA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 25,
+        "villageCode": "7-B",
+        "villageName": "WELIPITIYA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 26,
+        "villageCode": "7-C",
+        "villageName": "WEERAHELA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 27,
+        "villageCode": "7-D",
+        "villageName": "NELUMPOKUNA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 28,
+        "villageCode": "8-A",
+        "villageName": "GANGEYAYA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 29,
+        "villageCode": "8-B",
+        "villageName": "KUTTIGALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 30,
+        "villageCode": "8-C",
+        "villageName": "MURUTHWELA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 31,
+        "villageCode": "8-D",
+        "villageName": "JULAMPITIYA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 32,
+        "villageCode": "9-A",
+        "villageName": "SUDUWELIPELESSA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 33,
+        "villageCode": "9-B",
+        "villageName": "THERUNNANSEGAMA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 34,
+        "villageCode": "9-C",
+        "villageName": "DEWALE PANSALA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 35,
+        "villageCode": "9-D",
+        "villageName": "KIRALAWELKATUWA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 36,
+        "villageCode": "10-A",
+        "villageName": "MUDUNMANKADA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 37,
+        "villageCode": "10-B",
+        "villageName": "KUKURAMPOLA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 38,
+        "villageCode": "10-C",
+        "villageName": "ANDAMPAURA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 39,
+        "villageCode": "10-D",
+        "villageName": "MAURAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 40,
+        "villageCode": "10-E",
+        "villageName": "WALAWEGAMA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 41,
+        "villageCode": "10-F",
+        "villageName": "07 KANUWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 42,
+        "villageCode": "10-G",
+        "villageName": "BODIRAJA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 43,
+        "villageCode": "11-A",
+        "villageName": "KIULA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 44,
+        "villageCode": "11-B",
+        "villageName": "MATHTHALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 45,
+        "villageCode": "11-C",
+        "villageName": "KEPPETIYAWA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 46,
+        "villageCode": "11-D",
+        "villageName": "MAHA BOLANA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 47,
+        "villageCode": "11-E",
+        "villageName": "SANDARIVIGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 48,
+        "villageCode": "11-F",
+        "villageName": "KARAGAHAPITTANIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 49,
+        "villageCode": "11-G",
+        "villageName": "PADALANGALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 50,
+        "villageCode": "11-H",
+        "villageName": "ELEGODA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 51,
+        "villageCode": "11-I",
+        "villageName": "KARABAWEWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 52,
+        "villageCode": "12-A",
+        "villageName": "MAGAMA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 53,
+        "villageCode": "12-B",
+        "villageName": "WEHERAGODELLA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 54,
+        "villageCode": "12-C",
+        "villageName": "VIHARAGALA 2",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 55,
+        "villageCode": "12-D",
+        "villageName": "NUGEWELA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 56,
+        "villageCode": "12-E",
+        "villageName": "RANNAWALA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 57,
+        "villageCode": "12-F",
+        "villageName": "RADAMPALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 58,
+        "villageCode": "12-G",
+        "villageName": "DANDENIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 59,
+        "villageCode": "12-H",
+        "villageName": "GADOLWEWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 60,
+        "villageCode": "12-I",
+        "villageName": "NADIGAMVILA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 61,
+        "villageCode": "14-A",
+        "villageName": "BELIATHTHA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 62,
+        "villageCode": "14-C",
+        "villageName": "WASANAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 63,
+        "villageCode": "14-D",
+        "villageName": "SAMANALAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 64,
+        "villageCode": "14-F",
+        "villageName": "KOULARA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 65,
+        "villageCode": "14-G",
+        "villageName": "ISURUPURA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 66,
+        "villageCode": "14-H",
+        "villageName": "WADIYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 67,
+        "villageCode": "14-I",
+        "villageName": "INTERNAL",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 68,
+        "villageCode": "15-A",
+        "villageName": "UNAWATUNA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 69,
+        "villageCode": "15-B",
+        "villageName": "SIRIKADURAWATTA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 70,
+        "villageCode": "15-C",
+        "villageName": "BODARAKANDA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 71,
+        "villageCode": "15-D",
+        "villageName": "WAGURUWELA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 72,
+        "villageCode": "15-E",
+        "villageName": "06 KOLANIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 73,
+        "villageCode": "15-F",
+        "villageName": "MAMADALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 74,
+        "villageCode": "15-G",
+        "villageName": "HORAWINNA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 75,
+        "villageCode": "15-I",
+        "villageName": "WEHELLA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 76,
+        "villageCode": "17-A",
+        "villageName": "AMBALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 77,
+        "villageCode": "17-B",
+        "villageName": "MURUTHAGASPITIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 78,
+        "villageCode": "17-C",
+        "villageName": "WALASGALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 79,
+        "villageCode": "17-D",
+        "villageName": "DAKUNUELA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 80,
+        "villageCode": "17-E",
+        "villageName": "UDUVILA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 81,
+        "villageCode": "17-F",
+        "villageName": "MAHAARA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 82,
+        "villageCode": "17-G",
+        "villageName": "VITHARANADENIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 83,
+        "villageCode": "17-H",
+        "villageName": "THUNKAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 84,
+        "villageCode": "17-I",
+        "villageName": "GUNANADARMAYA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 85,
+        "villageCode": "30-A",
+        "villageName": "THELULLA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 86,
+        "villageCode": "30-B",
+        "villageName": "WEHERAYAYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 87,
+        "villageCode": "30-C",
+        "villageName": "WELLAWAYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 88,
+        "villageCode": "30-D",
+        "villageName": "DABARELLA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 89,
+        "villageCode": "30-E",
+        "villageName": "KENDAKETIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 90,
+        "villageCode": "30-F",
+        "villageName": "YALA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 91,
+        "villageCode": "30-G",
+        "villageName": "SANDUNGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 92,
+        "villageCode": "30-H",
+        "villageName": "BATAATHA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 93,
+        "villageCode": "30-I",
+        "villageName": "LUNAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 94,
+        "villageCode": "31-A",
+        "villageName": "MURAWESIHENA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 95,
+        "villageCode": "31-B",
+        "villageName": "SEWANAGALA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 96,
+        "villageCode": "31-C",
+        "villageName": "WELIGATTA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 97,
+        "villageCode": "31-D",
+        "villageName": "NETOLPITIYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 98,
+        "villageCode": "31-E",
+        "villageName": "USSANGODA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 99,
+        "villageCode": "31-F",
+        "villageName": "10-KANUWA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 100,
+        "villageCode": "31-G",
+        "villageName": "GODANA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 101,
+        "villageCode": "31-H",
+        "villageName": "ANDARAGASYAYA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 102,
+        "villageCode": "31-I",
+        "villageName": "EXTERNAL STAFF",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 103,
+        "villageCode": "32-A",
+        "villageName": "DEMUWATHA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 104,
+        "villageCode": "32-B",
+        "villageName": "RAKWANA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 105,
+        "villageCode": "32-C",
+        "villageName": "WARAYAYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 106,
+        "villageCode": "32-D",
+        "villageName": "MURUNGASYAYA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 107,
+        "villageCode": "32-E",
+        "villageName": "MARAKOLLIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 108,
+        "villageCode": "32-F",
+        "villageName": "MODARAPELESSA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 109,
+        "villageCode": "32-G",
+        "villageName": "INDIVINNA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 110,
+        "villageCode": "32-H",
+        "villageName": "MAITHRIGAMA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 111,
+        "villageCode": "32-I",
+        "villageName": "SAMAGIPURA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 112,
+        "villageCode": "33-A",
+        "villageName": "RAKAWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 113,
+        "villageCode": "33-B",
+        "villageName": "GURUPOKUNA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 114,
+        "villageCode": "33-C",
+        "villageName": "HALMILLEWA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 115,
+        "villageCode": "33-D",
+        "villageName": "POLGAHAWELENA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 116,
+        "villageCode": "33-E",
+        "villageName": "BUNDALA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 117,
+        "villageCode": "33-F",
+        "villageName": "RANMALUGAMA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 118,
+        "villageCode": "33-G",
+        "villageName": "KALAWELWALA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 119,
+        "villageCode": "34-A",
+        "villageName": "MAMADALA HAT",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 120,
+        "villageCode": "34-B",
+        "villageName": "PINGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 121,
+        "villageCode": "34-C",
+        "villageName": "DENIYA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 122,
+        "villageCode": "34-D",
+        "villageName": "MADUWANWELA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 123,
+        "villageCode": "34-E",
+        "villageName": "SUCHI",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 124,
+        "villageCode": "34-F",
+        "villageName": "KOLOBAGEARA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 125,
+        "villageCode": "34-G",
+        "villageName": "RANDIYAGAMA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 126,
+        "villageCode": "34-H",
+        "villageName": "UNAWA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 127,
+        "villageCode": "34-I",
+        "villageName": "SARAHARITHAGAMA",
+        "assignedTeamId": 2
+    },
+    {
+        "id": 128,
+        "villageCode": "35-A",
+        "villageName": "PADILIYAYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 129,
+        "villageCode": "35-B",
+        "villageName": "MIDDENIYA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 130,
+        "villageCode": "35-C",
+        "villageName": "SANHIDAGAMA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 131,
+        "villageCode": "35-D",
+        "villageName": "ACHARIGAMA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 132,
+        "villageCode": "35-E",
+        "villageName": "KASAGALA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 133,
+        "villageCode": "35-F",
+        "villageName": "WELIPOTHEWELA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 134,
+        "villageCode": "35-G",
+        "villageName": "IHALAGODA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 135,
+        "villageCode": "35-H",
+        "villageName": "SELLA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 136,
+        "villageCode": "35-I",
+        "villageName": "GALAHITIYA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 137,
+        "villageCode": "36-A",
+        "villageName": "SINGAPOORU NIWASA",
+        "assignedTeamId": 1
+    },
+    {
+        "id": 138,
+        "villageCode": "36-B",
+        "villageName": "DABEWELENA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 139,
+        "villageCode": "36-C",
+        "villageName": "SAPALAGAMA",
+        "assignedTeamId": 4
+    },
+    {
+        "id": 140,
+        "villageCode": "36-D",
+        "villageName": "PALLEMALALA",
+        "assignedTeamId": 5
+    },
+    {
+        "id": 141,
+        "villageCode": "36-E",
+        "villageName": "BORALUWALA",
+        "assignedTeamId": 5
+    }
+]

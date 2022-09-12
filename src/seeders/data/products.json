@@ -1,0 +1,674 @@
+[
+    {
+        "id": 1,
+        "productCode": "BAB10004",
+        "productName": "Anilla Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 2,
+        "productCode": "BAB10005",
+        "productName": "Camarillo S Bridle Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 3,
+        "productCode": "BAB10006",
+        "productName": "Pinimilla L Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 4,
+        "productCode": "BAB10007",
+        "productName": "Pinimilla M Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 5,
+        "productCode": "BAB10008",
+        "productName": "Pinimilla S Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 6,
+        "productCode": "BAB10024",
+        "productName": "Davante M Bag Body (CC)",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 7,
+        "productCode": "BAB10037",
+        "productName": "Flaminio Bag Body (CC)",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 8,
+        "productCode": "BAB10528",
+        "productName": "Camarillo Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 9,
+        "productCode": "BAB10532",
+        "productName": "Pinimilla S Bridle Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 10,
+        "productCode": "BAB10533",
+        "productName": "Pinimilla L Bridle Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 11,
+        "productCode": "BAB10534",
+        "productName": "Pinimilla M Bridle Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 12,
+        "productCode": "BAB10605",
+        "productName": "BAB: Wide Braid Fleck Large",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 13,
+        "productCode": "BAB10606",
+        "productName": "BAB: Wide Braid Fleck Small",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 14,
+        "productCode": "BAB10607",
+        "productName": "BAB: Wide Braid Fleck Mini",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 15,
+        "productCode": "BAB10744",
+        "productName": "Marnii Small Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 16,
+        "productCode": "BAB10745",
+        "productName": "Marnii Medium Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 17,
+        "productCode": "BAB10746",
+        "productName": "Marnii Large Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 3
+    },
+    {
+        "id": 18,
+        "productCode": "BAB10747",
+        "productName": "Rosanna Mini Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 19,
+        "productCode": "BAB10748",
+        "productName": "Chrishelle Medium Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 20,
+        "productCode": "BAB10749",
+        "productName": "Heloise Bag Crochet Side Panel",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 21,
+        "productCode": "BAB10751",
+        "productName": "Lucella Bag Body (2 Panels)",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 22,
+        "productCode": "BAB10777",
+        "productName": "Elle Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 23,
+        "productCode": "BAB10798",
+        "productName": "Coco Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 24,
+        "productCode": "BAB10799",
+        "productName": "Liliana Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 25,
+        "productCode": "BAB10803",
+        "productName": "Seline Fringe Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 26,
+        "productCode": "BAB10864",
+        "productName": "Luna Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 1
+    },
+    {
+        "id": 27,
+        "productCode": "BAB10865",
+        "productName": "Ava Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 1
+    },
+    {
+        "id": 28,
+        "productCode": "BAB10867",
+        "productName": "Leighton Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 29,
+        "productCode": "BAB10868",
+        "productName": "Harper Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 30,
+        "productCode": "BAB10869",
+        "productName": "Darcie Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 31,
+        "productCode": "BAB10871",
+        "productName": "Vanessa Bag Raffia Loop",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 32,
+        "productCode": "BAB10872",
+        "productName": "Kiki Bag Raffia Loop",
+        "categoryId": 1,
+        "subCategoryId": 2
+    },
+    {
+        "id": 33,
+        "productCode": "BAB10873",
+        "productName": "Penelope Bag Body",
+        "categoryId": 1,
+        "subCategoryId": 4
+    },
+    {
+        "id": 34,
+        "productCode": "HAB10156",
+        "productName": "Cataline Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 35,
+        "productCode": "HAB10159",
+        "productName": "Classic 5 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 3
+    },
+    {
+        "id": 36,
+        "productCode": "HAB10164",
+        "productName": "Loma Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 37,
+        "productCode": "HAB10168",
+        "productName": "Provence 10 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 38,
+        "productCode": "HAB10169",
+        "productName": "Provence 12 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 39,
+        "productCode": "HAB10170",
+        "productName": "Provence 8 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 40,
+        "productCode": "HAB10175",
+        "productName": "Villa 6 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 41,
+        "productCode": "HAB10181",
+        "productName": "Abaka Hat Body (NEW NAME SAM)",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 42,
+        "productCode": "HAB10197",
+        "productName": "Belen Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 43,
+        "productCode": "HAB10199",
+        "productName": "Bia Fringe Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 44,
+        "productCode": "HAB10200",
+        "productName": "Blaise/ Vivette Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 45,
+        "productCode": "HAB10204",
+        "productName": "Desmonda Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 46,
+        "productCode": "HAB10205",
+        "productName": "Dessa Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 47,
+        "productCode": "HAB10207",
+        "productName": "Emmie 6 Fringe Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 48,
+        "productCode": "HAB10208",
+        "productName": "Emmie 9 Fringe Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 49,
+        "productCode": "HAB10210",
+        "productName": "Eudora Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 50,
+        "productCode": "HAB10211",
+        "productName": "Fai Hat Body (NEW NAME SAM)",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 51,
+        "productCode": "HAB10222",
+        "productName": "Kalola Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 52,
+        "productCode": "HAB10243",
+        "productName": "Rosalie Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 53,
+        "productCode": "HAB10247",
+        "productName": "Tahani Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 54,
+        "productCode": "HAB10253",
+        "productName": "Villa 9 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 55,
+        "productCode": "HAB10257",
+        "productName": "Yolanda Fringe Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 56,
+        "productCode": "HAB10553",
+        "productName": "Delena Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 57,
+        "productCode": "HAB10554",
+        "productName": "Amie 10 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 58,
+        "productCode": "HAB10555",
+        "productName": "Amie 8 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 59,
+        "productCode": "HAB10556",
+        "productName": "Clare Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 60,
+        "productCode": "HAB10557",
+        "productName": "Rosie Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 61,
+        "productCode": "HAB10558",
+        "productName": "Maude Hat Body  (NEW NAME BRITTON)",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 62,
+        "productCode": "HAB10561",
+        "productName": "Munroe Hat Body (NEW NAME BRITTON)",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 63,
+        "productCode": "HAB10563",
+        "productName": "Parkes Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 64,
+        "productCode": "HAB10564",
+        "productName": "Winston Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 65,
+        "productCode": "HAB10574",
+        "productName": "Ally Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 66,
+        "productCode": "HAB10575",
+        "productName": "Odetta Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 67,
+        "productCode": "HAB10576",
+        "productName": "Rommy Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 68,
+        "productCode": "HAB10577",
+        "productName": "Jagger Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 69,
+        "productCode": "HAB10578",
+        "productName": "Gigi Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 70,
+        "productCode": "HAB10579",
+        "productName": "Lilly Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 71,
+        "productCode": "HAB10580",
+        "productName": "Kitt Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 72,
+        "productCode": "HAB10585",
+        "productName": "Baseball Cap Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 73,
+        "productCode": "HAB10587",
+        "productName": "Flat Cap Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 74,
+        "productCode": "HAB10589",
+        "productName": "Rumi Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 75,
+        "productCode": "HAB10615",
+        "productName": "Iris 9 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 76,
+        "productCode": "HAB10616",
+        "productName": "Iris 12 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 77,
+        "productCode": "HAB10757",
+        "productName": "Elara 8 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 78,
+        "productCode": "HAB10758",
+        "productName": "Elara 10 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 79,
+        "productCode": "HAB10759",
+        "productName": "Isma Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 80,
+        "productCode": "HAB10764",
+        "productName": "Lolah Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 81,
+        "productCode": "HAB10765",
+        "productName": "Harte Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 82,
+        "productCode": "HAB10772",
+        "productName": "Rebecca Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 83,
+        "productCode": "HAB10780",
+        "productName": "Sella WB Fringe Bucket",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 84,
+        "productCode": "HAB10781",
+        "productName": "Mirah WB Fringe Visor Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 85,
+        "productCode": "HAB10786",
+        "productName": "Arise WB Fringe Visor Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 86,
+        "productCode": "HAB10787",
+        "productName": "Giulietta Fringe Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 2
+    },
+    {
+        "id": 87,
+        "productCode": "HAB10909",
+        "productName": "Kami Crown Only Body",
+        "categoryId": 2,
+        "subCategoryId": 1
+    },
+    {
+        "id": 88,
+        "productCode": "HAB10911",
+        "productName": "Saoirse Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 1
+    },
+    {
+        "id": 89,
+        "productCode": "HAB10919",
+        "productName": "Wendy 8 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 90,
+        "productCode": "HAB10920",
+        "productName": "Wendy 10 Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 91,
+        "productCode": "HAB10921",
+        "productName": "Launa Hat Body",
+        "categoryId": 2,
+        "subCategoryId": 4
+    },
+    {
+        "id": 92,
+        "productCode": "TRS10272",
+        "productName": "Tress: 5mm Raffia",
+        "categoryId": 3,
+        "subCategoryId": 5
+    },
+    {
+        "id": 93,
+        "productCode": "TRS10278",
+        "productName": "Tress: 8mm Raffia",
+        "categoryId": 3,
+        "subCategoryId": 6
+    },
+    {
+        "id": 94,
+        "productCode": "TRS10286",
+        "productName": "2mm Raffia String",
+        "categoryId": 4,
+        "subCategoryId": 7
+    },
+    {
+        "id": 95,
+        "productCode": "TRS10287",
+        "productName": "4mm Raffia String",
+        "categoryId": 4,
+        "subCategoryId": 7
+    },
+    {
+        "id": 96,
+        "productCode": "TRS10349",
+        "productName": "3mm Raffia String",
+        "categoryId": 4,
+        "subCategoryId": 7
+    }
+]
