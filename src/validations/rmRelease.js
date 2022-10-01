@@ -10,7 +10,7 @@ module.exports = {
             quantity: Joi.number().required(),
             forProduct: Joi.number(),
             issuedTo: Joi.number().required(),
-            geoCoordinates: Joi.string().required(),
+            geoCoordinates: Joi.string(),
         },
     },
 };
