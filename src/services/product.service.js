@@ -6,14 +6,14 @@ const prisma = new PrismaClient({
     // log: ['query', 'info', 'warn', 'error'],
 });
 
-const searchArtisanByEmpId = async (employeeId) => {
+const getProducts = async () => {
     try {
-        const artisan = await prisma.artisans.findFirst({ where: { employeeId }, include: { village: true } });
+        const products = await prisma.products.findMany();
 
-        return response(httpStatus.OK, 'Success', artisan);
+        return response(httpStatus.OK, 'Success', products);
     } catch (error) {
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
     }
 };
 
-module.exports = { searchArtisanByEmpId };
+module.exports = { getProducts };

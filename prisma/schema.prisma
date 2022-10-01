@@ -119,3 +119,7 @@ model rmReleasePackageSizes {
   packageWeight   Float       @db.Float()
   rmRelease       rmRelease[]
 }
+
+model finishedProductsCollection {
+  id Int @id @default(autoincrement())
+}
