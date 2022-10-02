@@ -7,8 +7,8 @@ CREATE TABLE `users` (
     `userType` ENUM('ADMIN', 'TEAM_LEAD', 'GENERAL_EMPLOYEE') NOT NULL DEFAULT 'GENERAL_EMPLOYEE',
     `teamId` INTEGER NULL,
     `status` ENUM('ACTIVE', 'INACTIVE') NOT NULL DEFAULT 'INACTIVE',
-    `createdAt` DATETIME(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
-    `updatedAt` DATETIME(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
+    `createdAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     UNIQUE INDEX `users_email_key`(`email`),
     PRIMARY KEY (`id`)
@@ -90,13 +90,14 @@ CREATE TABLE `artisans` (
 CREATE TABLE `rmRelease` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `issuedBy` INTEGER NOT NULL,
-    `issuedAt` DATETIME(6) NOT NULL,
+    `issuedAt` DATETIME(3) NOT NULL,
     `colorId` INTEGER NOT NULL,
     `packageSize` INTEGER NOT NULL,
     `quantity` FLOAT NOT NULL,
     `forProduct` INTEGER NULL,
     `issuedTo` INTEGER NOT NULL,
-    `geoCoordinates` VARCHAR(255) NOT NULL,
+    `geoCoordinates` VARCHAR(255) NULL,
+    `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -106,6 +107,31 @@ CREATE TABLE `rmReleasePackageSizes` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `packageSizeName` VARCHAR(255) NOT NULL,
     `packageWeight` FLOAT NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `finishedProductsCollection` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `type` ENUM('IN', 'OUT') NOT NULL,
+    `collectedBy` INTEGER NOT NULL,
+    `collectedAt` DATETIME(3) NOT NULL,
+    `colorId` INTEGER NOT NULL,
+    `quantity` FLOAT NOT NULL,
+    `productId` INTEGER NOT NULL,
+    `collectedFrom` INTEGER NOT NULL,
+    `geoCoordinates` VARCHAR(255) NULL,
+    `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `grn` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `userId` INTEGER NOT NULL,
+    `grnType` ENUM('IN', 'OUT') NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -142,3 +168,18 @@ ALTER TABLE `rmRelease` ADD CONSTRAINT `rmRelease_forProduct_fkey` FOREIGN KEY (
 
 -- AddForeignKey
 ALTER TABLE `rmRelease` ADD CONSTRAINT `rmRelease_issuedTo_fkey` FOREIGN KEY (`issuedTo`) REFERENCES `artisans`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollection_collectedBy_fkey` FOREIGN KEY (`collectedBy`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollection_colorId_fkey` FOREIGN KEY (`colorId`) REFERENCES `colors`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollection_productId_fkey` FOREIGN KEY (`productId`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollection_collectedFrom_fkey` FOREIGN KEY (`collectedFrom`) REFERENCES `artisans`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `grn` ADD CONSTRAINT `grn_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
