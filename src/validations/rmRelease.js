@@ -8,7 +8,7 @@ module.exports = {
             colorId: Joi.number().required(),
             packageSize: Joi.number().required(),
             quantity: Joi.number().required(),
-            forProduct: Joi.number(),
+            forProduct: Joi.any(),
             issuedTo: Joi.number().required(),
             geoCoordinates: Joi.string(),
         },

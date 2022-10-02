@@ -114,7 +114,6 @@ CREATE TABLE `rmReleasePackageSizes` (
 -- CreateTable
 CREATE TABLE `finishedProductsCollection` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `type` ENUM('IN', 'OUT') NOT NULL,
     `collectedBy` INTEGER NOT NULL,
     `collectedAt` DATETIME(3) NOT NULL,
     `colorId` INTEGER NOT NULL,

@@ -128,7 +128,6 @@ model rmReleasePackageSizes {
 
 model finishedProductsCollection {
   id             Int       @id @default(autoincrement())
-  type           GRN_TYPES
   user           users     @relation(fields: [collectedBy], references: [id])
   collectedBy    Int       @db.Int()
   collectedAt    DateTime  @db.DateTime(3)
