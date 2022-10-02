@@ -22,6 +22,7 @@ model users {
   updatedAt                  DateTime?                    @default(now()) @db.DateTime()
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
+  grn                        grn[]
 }
 
 model teams {
@@ -126,17 +127,32 @@ model rmReleasePackageSizes {
 }
 
 model finishedProductsCollection {
-  id             Int      @id @default(autoincrement())
-  user           users    @relation(fields: [collectedBy], references: [id])
-  collectedBy    Int      @db.Int()
-  collectedAt    DateTime @db.DateTime(6)
-  color          colors   @relation(fields: [colorId], references: [id])
-  colorId        Int      @db.Int()
-  quantity       Float    @db.Float()
-  Product        products @relation(fields: [product], references: [id])
-  product        Int      @db.Int()
-  artisan        artisans @relation(fields: [collectedFrom], references: [id])
-  collectedFrom  Int      @db.Int()
-  geoCoordinates String?  @db.VarChar(255)
-  timestamp      DateTime @default(now()) @db.DateTime()
+  id             Int       @id @default(autoincrement())
+  type           GRN_TYPES
+  user           users     @relation(fields: [collectedBy], references: [id])
+  collectedBy    Int       @db.Int()
+  collectedAt    DateTime  @db.DateTime(6)
+  color          colors    @relation(fields: [colorId], references: [id])
+  colorId        Int       @db.Int()
+  quantity       Float     @db.Float()
+  Product        products  @relation(fields: [productId], references: [id])
+  productId      Int       @db.Int()
+  artisan        artisans  @relation(fields: [collectedFrom], references: [id])
+  collectedFrom  Int       @db.Int()
+  geoCoordinates String?   @db.VarChar(255)
+  timestamp      DateTime  @default(now()) @db.DateTime()
+}
+
+model grn {
+  id      Int       @id @default(autoincrement())
+  user    users     @relation(fields: [userId], references: [id])
+  userId  Int       @db.Int()
+  grnType GRN_TYPES
+
+  
+}
+
+enum GRN_TYPES {
+  IN
+  OUT
 }

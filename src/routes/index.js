@@ -6,6 +6,8 @@ const artisanRoutes = require('./artisan.route');
 const packageSizesRoutes = require('./packageSizes.route');
 const productRoutes = require('./product.route');
 const rmReleaseRoutes = require('./rmRelease.route');
+const productCollectionRoutes = require('./productCollection.route');
+const grnProcessRoutes = require('./grnProcess.route');
 
 /** HEALTH CHECK */
 routes.get(`${process.env.API_VERSION_PREFIX}/`, (req, res) => res.status(200).json({ message: 'service is up and running' }));
@@ -16,6 +18,8 @@ routes.use(`${process.env.API_VERSION_PREFIX}/artisan`, artisanRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/packageSizes`, packageSizesRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/products`, productRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/rmRelease`, rmReleaseRoutes);
+routes.use(`${process.env.API_VERSION_PREFIX}/productCollection`, productCollectionRoutes);
+routes.use(`${process.env.API_VERSION_PREFIX}/grn`, grnProcessRoutes);
 
 routes.use(errors());
 

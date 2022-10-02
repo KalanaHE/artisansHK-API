@@ -5,7 +5,7 @@ const { response } = require('../utils/response');
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient({
-    log: ['query', 'info', 'warn', 'error'],
+    // log: ['query', 'info', 'warn', 'error'],
 });
 
 const signIn = async (data) => {
