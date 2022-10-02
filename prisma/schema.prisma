@@ -18,8 +18,8 @@ model users {
   team                       teams?                       @relation(fields: [teamId], references: [id])
   teamId                     Int?                         @db.Int()
   status                     USER_STATUS                  @default(INACTIVE)
-  createdAt                  DateTime?                    @default(now()) @db.DateTime()
-  updatedAt                  DateTime?                    @default(now()) @db.DateTime()
+  createdAt                  DateTime?                    @default(now()) @db.DateTime(3)
+  updatedAt                  DateTime?                    @default(now()) @db.DateTime(3)
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
   grn                        grn[]
@@ -105,7 +105,7 @@ model rmRelease {
   id                    Int                   @id @default(autoincrement())
   user                  users                 @relation(fields: [issuedBy], references: [id])
   issuedBy              Int                   @db.Int()
-  issuedAt              DateTime              @db.DateTime(6)
+  issuedAt              DateTime              @db.DateTime(3)
   color                 colors                @relation(fields: [colorId], references: [id])
   colorId               Int                   @db.Int()
   rmReleasePackageSizes rmReleasePackageSizes @relation(fields: [packageSize], references: [id])
@@ -116,7 +116,7 @@ model rmRelease {
   artisan               artisans              @relation(fields: [issuedTo], references: [id])
   issuedTo              Int                   @db.Int()
   geoCoordinates        String?               @db.VarChar(255)
-  timestamp             DateTime              @default(now()) @db.DateTime()
+  timestamp             DateTime              @default(now()) @db.DateTime(3)
 }
 
 model rmReleasePackageSizes {
@@ -131,7 +131,7 @@ model finishedProductsCollection {
   type           GRN_TYPES
   user           users     @relation(fields: [collectedBy], references: [id])
   collectedBy    Int       @db.Int()
-  collectedAt    DateTime  @db.DateTime(6)
+  collectedAt    DateTime  @db.DateTime(3)
   color          colors    @relation(fields: [colorId], references: [id])
   colorId        Int       @db.Int()
   quantity       Float     @db.Float()
@@ -140,7 +140,7 @@ model finishedProductsCollection {
   artisan        artisans  @relation(fields: [collectedFrom], references: [id])
   collectedFrom  Int       @db.Int()
   geoCoordinates String?   @db.VarChar(255)
-  timestamp      DateTime  @default(now()) @db.DateTime()
+  timestamp      DateTime  @default(now()) @db.DateTime(3)
 }
 
 model grn {
