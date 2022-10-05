@@ -8,18 +8,7 @@ const prisma = new PrismaClient({
 
 const createGrnProcessRecord = async (data) => {
     try {
-        const { collectedBy, collectedAt, colorId, quantity, productId, collectedFrom, geoCoordinates } = data;
-        const createdRecord = await prisma.finishedProductsCollection.create({
-            data: {
-                collectedBy,
-                collectedAt,
-                colorId,
-                quantity,
-                productId,
-                collectedFrom,
-                geoCoordinates,
-            },
-        });
+        const createdRecord = await prisma.grn.create({ data });
 
         return response(httpStatus.OK, 'Success', createdRecord);
     } catch (error) {
