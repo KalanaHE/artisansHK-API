@@ -9,4 +9,9 @@ const searchArtisanByEmpId = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { searchArtisanByEmpId };
+const getAllArtisans = asyncHandler(async (req, res) => {
+    const data = await artisanService.getAllArtisans();
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { searchArtisanByEmpId, getAllArtisans };

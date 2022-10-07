@@ -8,6 +8,7 @@ const productRoutes = require('./product.route');
 const rmReleaseRoutes = require('./rmRelease.route');
 const productCollectionRoutes = require('./productCollection.route');
 const grnProcessRoutes = require('./grnProcess.route');
+const reportsRoutes = require('./reports.route');
 
 /** HEALTH CHECK */
 routes.get(`${process.env.API_VERSION_PREFIX}/`, (req, res) => res.status(200).json({ message: 'service is up and running' }));
@@ -20,6 +21,9 @@ routes.use(`${process.env.API_VERSION_PREFIX}/products`, productRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/rmRelease`, rmReleaseRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/productCollection`, productCollectionRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/grn`, grnProcessRoutes);
+
+//admin portal routes
+routes.use(`${process.env.API_VERSION_PREFIX}/reports`, reportsRoutes);
 
 routes.use(errors());
 
