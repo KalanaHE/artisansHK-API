@@ -7,4 +7,10 @@ const getArtisanWiseReport = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { getArtisanWiseReport };
+const getVillageWiseReport = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const data = await reportsService.getVillageWiseReport(body);
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { getArtisanWiseReport, getVillageWiseReport };

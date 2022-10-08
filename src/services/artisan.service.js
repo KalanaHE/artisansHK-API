@@ -19,9 +19,7 @@ const searchArtisanByEmpId = async (employeeId) => {
 const getAllArtisans = async () => {
     try {
         const artisans = await prisma.artisans.findMany();
-console.log('====================================');
-console.log(artisans);
-console.log('====================================');
+
         return response(httpStatus.OK, 'Success', artisans);
     } catch (error) {
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
