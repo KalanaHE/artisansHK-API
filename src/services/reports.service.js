@@ -6,7 +6,7 @@ const prisma = new PrismaClient({
     // log: ['query', 'info', 'warn', 'error'],
 });
 
-const getArtisanWiseReport = async (data) => {
+const getArtisanWiseRmIssueReport = async (data) => {
     try {
         const { artisanId, startDate, endDate } = data;
         const report = await prisma.rmRelease.findMany({
@@ -20,7 +20,7 @@ const getArtisanWiseReport = async (data) => {
     }
 };
 
-const getVillageWiseReport = async (data) => {
+const getVillageWiseRmIssueReport = async (data) => {
     try {
         const { villageId, startDate, endDate } = data;
 
@@ -38,4 +38,34 @@ const getVillageWiseReport = async (data) => {
     }
 };
 
-module.exports = { getArtisanWiseReport, getVillageWiseReport };
+const getArtisanWiseCollectionReport = async (data) => {
+    try {
+        const { artisanId, startDate, endDate } = data;
+        const report = await prisma.finishedProductsCollection.findMany({
+            where: { collectedFrom: artisanId, timestamp: { gte: startDate, lte: endDate } },
+            include: {
+                artisan: { include: { village: true } },
+                color: true,
+                user: {
+                    select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                        userType: true,
+                        teamId: true,
+                        status: true,
+                        createdAt: true,
+                        updatedAt: true,
+                    },
+                },
+                product: true,
+            },
+        });
+
+        return response(httpStatus.OK, 'Success', report);
+    } catch (error) {
+        return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
+    }
+};
+
+module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport };

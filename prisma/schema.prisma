@@ -137,7 +137,7 @@ model finishedProductsCollection {
   color          colors   @relation(fields: [colorId], references: [id])
   colorId        Int      @db.Int()
   quantity       Float    @db.Float()
-  Product        products @relation(fields: [productId], references: [id])
+  product        products @relation(fields: [productId], references: [id])
   productId      Int      @db.Int()
   artisan        artisans @relation(fields: [collectedFrom], references: [id])
   collectedFrom  Int      @db.Int()

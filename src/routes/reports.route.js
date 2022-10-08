@@ -1,10 +1,12 @@
 const express = require('express');
-const { getArtisanWiseReport, getVillageWiseReport } = require('../controllers/reports.controller');
+const { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport } = require('../controllers/reports.controller');
 
 const router = express.Router();
 
-router.route('/artisan-wise').post(getArtisanWiseReport);
+router.route('/rm-issue-artisan-wise').post(getArtisanWiseRmIssueReport);
 
-router.route('/village-wise').post(getVillageWiseReport);
+router.route('/rm-issue-village-wise').post(getVillageWiseRmIssueReport);
+
+router.route('/collection-artisan-wise').post(getArtisanWiseCollectionReport);
 
 module.exports = router;
