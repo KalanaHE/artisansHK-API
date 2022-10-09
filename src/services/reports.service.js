@@ -68,4 +68,35 @@ const getArtisanWiseCollectionReport = async (data) => {
     }
 };
 
-module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport };
+const getGrnReport = async (data) => {
+    try {
+        const { employeeId, type = ['IN', 'OUT'], startDate, endDate } = data;
+
+        const report = await prisma.grn.findMany({
+            where: { userId: employeeId, grnType: { in: type }, timestamp: { gte: startDate, lte: endDate } },
+            include: {
+                user: {
+                    select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                        userType: true,
+                        teamId: true,
+                        status: true,
+                        createdAt: true,
+                        updatedAt: true,
+                    },
+                },
+                color: true,
+                rmReleasePackageSizes: true,
+                product: true,
+            },
+        });
+
+        return response(httpStatus.OK, 'Success', report);
+    } catch (error) {
+        return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
+    }
+};
+
+module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport, getGrnReport };

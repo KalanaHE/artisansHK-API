@@ -155,7 +155,7 @@ model grn {
   colorId               Int                    @db.Int()
   rmReleasePackageSizes rmReleasePackageSizes? @relation(fields: [packageSize], references: [id])
   packageSize           Int?                   @db.Int()
-  Product               products?              @relation(fields: [productId], references: [id])
+  product               products?              @relation(fields: [productId], references: [id])
   productId             Int?                   @db.Int()
   quantity              Float                  @db.Float()
 
