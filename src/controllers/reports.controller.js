@@ -25,4 +25,10 @@ const getGrnReport = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport, getGrnReport };
+const getGrnRejectReport = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const data = await reportsService.getGrnRejectReport(body);
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport, getGrnReport, getGrnRejectReport };

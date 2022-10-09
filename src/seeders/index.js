@@ -10,6 +10,7 @@ const products = require('./data/products.json');
 const villages = require('./data/villages.json');
 const rmreleasePackageSizes = require('./data/rmreleasePackageSizes.json');
 const artisans = require('./data/artisans.json');
+const qcInspectors = require('./data/qcInspectors.json');
 const prisma = new PrismaClient({
     log: ['query', 'info', 'warn', 'error'],
 });
@@ -81,6 +82,13 @@ const seed = async () => {
                 skipDuplicates: true,
             });
             console.info('artisans added!');
+
+            const _createdQcInspectors = await prisma.qcInspectors.createMany({
+                data: qcInspectors,
+                skipDuplicates: true,
+            });
+            console.info('qc inspectors added!');
+
         });
     } catch (e) {
         process.exit(1);

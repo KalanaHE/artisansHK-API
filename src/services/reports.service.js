@@ -73,7 +73,7 @@ const getGrnReport = async (data) => {
         const { employeeId, type = ['IN', 'OUT'], startDate, endDate } = data;
 
         const report = await prisma.grn.findMany({
-            where: { userId: employeeId, grnType: { in: type }, timestamp: { gte: startDate, lte: endDate } },
+            where: { userId: employeeId, grnType: { in: type }, timestamp: { gte: startDate, lte: endDate }, isRejected: false },
             include: {
                 user: {
                     select: {
@@ -99,4 +99,35 @@ const getGrnReport = async (data) => {
     }
 };
 
-module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport, getGrnReport };
+const getGrnRejectReport = async (data) => {
+    try {
+        const { employeeId, startDate, endDate } = data;
+
+        const report = await prisma.grn.findMany({
+            where: { userId: employeeId, grnType: 'IN', timestamp: { gte: startDate, lte: endDate }, isRejected: true },
+            include: {
+                user: {
+                    select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                        userType: true,
+                        teamId: true,
+                        status: true,
+                        createdAt: true,
+                        updatedAt: true,
+                    },
+                },
+                color: true,
+                product: true,
+                qcInspector: true,
+            },
+        });
+
+        return response(httpStatus.OK, 'Success', report);
+    } catch (error) {
+        return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
+    }
+};
+
+module.exports = { getArtisanWiseRmIssueReport, getVillageWiseRmIssueReport, getArtisanWiseCollectionReport, getGrnReport, getGrnRejectReport };

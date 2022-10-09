@@ -9,6 +9,8 @@ module.exports = {
             quantity: Joi.number().required(),
             productId: Joi.number(),
             packageSize: Joi.number(),
+            qcBy: Joi.number(),
+            isRejected: Joi.boolean(),
         },
     },
 };

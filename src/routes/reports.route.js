@@ -4,6 +4,7 @@ const {
     getVillageWiseRmIssueReport,
     getArtisanWiseCollectionReport,
     getGrnReport,
+    getGrnRejectReport,
 } = require('../controllers/reports.controller');
 
 const router = express.Router();
@@ -15,5 +16,7 @@ router.route('/rm-issue-village-wise').post(getVillageWiseRmIssueReport);
 router.route('/collection-artisan-wise').post(getArtisanWiseCollectionReport);
 
 router.route('/grn').post(getGrnReport);
+
+router.route('/grn-reject').post(getGrnRejectReport);
 
 module.exports = router;

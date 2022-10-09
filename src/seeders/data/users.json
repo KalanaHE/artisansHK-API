@@ -1,4 +1,6 @@
 [
     { "id": 1, "name": "Buddhi Perera", "email": "buddi@gmail.com", "password": "helloworld", "userType": "ADMIN", "status": "ACTIVE" },
-    { "id": 2, "name": "Employee 1", "email": "e1@gmail.com", "password": "helloworld", "userType": "GENERAL_EMPLOYEE", "status": "ACTIVE" }
+    { "id": 2, "name": "Employee 1", "email": "e1@gmail.com", "password": "helloworld", "userType": "GENERAL_EMPLOYEE", "status": "ACTIVE" },
+    { "id": 3, "name": "Employee 2", "email": "e2@gmail.com", "password": "helloworld", "userType": "GENERAL_EMPLOYEE", "status": "ACTIVE" },
+    { "id": 4, "name": "Employee 3", "email": "e3@gmail.com", "password": "helloworld", "userType": "GENERAL_EMPLOYEE", "status": "ACTIVE" }
 ]

@@ -25,6 +25,15 @@ model users {
   grn                        grn[]
 }
 
+model qcInspectors {
+  id        Int         @id @default(autoincrement())
+  name      String      @db.VarChar(255)
+  email     String      @unique @db.VarChar(255)
+  status    USER_STATUS @default(ACTIVE)
+  createdAt DateTime?   @default(now()) @db.DateTime(3)
+  grn       grn[]
+}
+
 model teams {
   id       Int        @id @default(autoincrement())
   name     String     @db.VarChar(255)
@@ -158,6 +167,10 @@ model grn {
   product               products?              @relation(fields: [productId], references: [id])
   productId             Int?                   @db.Int()
   quantity              Float                  @db.Float()
+
+  qcInspector qcInspectors? @relation(fields: [qcBy], references: [id])
+  qcBy        Int?          @db.Int()
+  isRejected  Boolean?      @default(false)
 
   timestamp DateTime @default(now()) @db.DateTime(3)
 }
