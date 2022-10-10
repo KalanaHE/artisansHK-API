@@ -11,4 +11,9 @@ const getThisMonthRmIssueTotal = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { getTodayRmIssueTotal, getThisMonthRmIssueTotal };
+const getThisMonthCollectionStats = asyncHandler(async (req, res) => {
+    const data = await statsService.getThisMonthCollectionStats();
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { getTodayRmIssueTotal, getThisMonthRmIssueTotal, getThisMonthCollectionStats };
