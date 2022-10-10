@@ -20,12 +20,14 @@ const getTodayRmIssueTotal = async () => {
         });
 
         var sum = 0;
+        const miniChartStat = [];
 
         for (let i = 0; i < todayRmIssues.length; i++) {
             sum += todayRmIssues[i].quantity * todayRmIssues[i].rmReleasePackageSizes.packageWeight;
+            miniChartStat.push(todayRmIssues[i].quantity * todayRmIssues[i].rmReleasePackageSizes.packageWeight);
         }
 
-        return response(httpStatus.OK, 'Success', { todayRmReleaseSum: sum });
+        return response(httpStatus.OK, 'Success', { todayRmReleaseSum: sum, miniChartStat });
     } catch (error) {
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
     }
@@ -47,12 +49,14 @@ const getThisMonthRmIssueTotal = async () => {
         });
 
         var sum = 0;
+        const miniChartStat = [];
 
         for (let i = 0; i < todayRmIssues.length; i++) {
             sum += todayRmIssues[i].quantity * todayRmIssues[i].rmReleasePackageSizes.packageWeight;
+            miniChartStat.push(todayRmIssues[i].quantity * todayRmIssues[i].rmReleasePackageSizes.packageWeight);
         }
 
-        return response(httpStatus.OK, 'Success', { thisMonthRmReleaseSum: sum });
+        return response(httpStatus.OK, 'Success', { thisMonthRmReleaseSum: sum, miniChartStat });
     } catch (error) {
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
     }
