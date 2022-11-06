@@ -27,7 +27,7 @@ const signIn = async (data) => {
             expiresIn: process.env.JWT_LIFESPAN,
         });
 
-        return response(httpStatus.OK, 'Success', { userId: user.id, userName: user.name, token });
+        return response(httpStatus.OK, 'Success', { userId: user.id, userName: user.name, userType: user.userType, token });
     } catch (error) {
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
     }

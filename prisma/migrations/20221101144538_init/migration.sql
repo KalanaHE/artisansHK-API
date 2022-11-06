@@ -4,25 +4,13 @@ CREATE TABLE `users` (
     `name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
     `password` VARCHAR(200) NOT NULL,
-    `userType` ENUM('ADMIN', 'TEAM_LEAD', 'GENERAL_EMPLOYEE') NOT NULL DEFAULT 'GENERAL_EMPLOYEE',
+    `userType` ENUM('ADMIN', 'TEAM_LEAD', 'GENERAL_EMPLOYEE', 'QC_USER', 'INVENTORY_RECEPTIONIST') NOT NULL DEFAULT 'GENERAL_EMPLOYEE',
     `teamId` INTEGER NULL,
     `status` ENUM('ACTIVE', 'INACTIVE') NOT NULL DEFAULT 'INACTIVE',
     `createdAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     UNIQUE INDEX `users_email_key`(`email`),
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
-CREATE TABLE `qcInspectors` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-    `status` ENUM('ACTIVE', 'INACTIVE') NOT NULL DEFAULT 'ACTIVE',
-    `createdAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
-
-    UNIQUE INDEX `qcInspectors_email_key`(`email`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -99,6 +87,15 @@ CREATE TABLE `artisans` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `rmReleasePackageSizes` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `packageSizeName` VARCHAR(255) NOT NULL,
+    `packageWeight` FLOAT NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `rmRelease` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `issuedBy` INTEGER NOT NULL,
@@ -110,15 +107,6 @@ CREATE TABLE `rmRelease` (
     `issuedTo` INTEGER NOT NULL,
     `geoCoordinates` VARCHAR(255) NULL,
     `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
-CREATE TABLE `rmReleasePackageSizes` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `packageSizeName` VARCHAR(255) NOT NULL,
-    `packageWeight` FLOAT NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -139,16 +127,15 @@ CREATE TABLE `finishedProductsCollection` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `grn` (
+CREATE TABLE `inventoryTransactions` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `userId` INTEGER NOT NULL,
-    `grnType` ENUM('IN', 'OUT') NOT NULL,
+    `transactionType` ENUM('IN', 'OUT') NOT NULL,
+    `issuer` INTEGER NOT NULL,
+    `receiver` INTEGER NOT NULL,
     `colorId` INTEGER NOT NULL,
     `packageSize` INTEGER NULL,
     `productId` INTEGER NULL,
     `quantity` FLOAT NOT NULL,
-    `qcBy` INTEGER NULL,
-    `isRejected` BOOLEAN NULL DEFAULT false,
     `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
@@ -200,16 +187,16 @@ ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollect
 ALTER TABLE `finishedProductsCollection` ADD CONSTRAINT `finishedProductsCollection_collectedFrom_fkey` FOREIGN KEY (`collectedFrom`) REFERENCES `artisans`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `grn` ADD CONSTRAINT `grn_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `inventoryTransactions` ADD CONSTRAINT `inventoryTransactions_issuer_fkey` FOREIGN KEY (`issuer`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `grn` ADD CONSTRAINT `grn_colorId_fkey` FOREIGN KEY (`colorId`) REFERENCES `colors`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `inventoryTransactions` ADD CONSTRAINT `inventoryTransactions_receiver_fkey` FOREIGN KEY (`receiver`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `grn` ADD CONSTRAINT `grn_packageSize_fkey` FOREIGN KEY (`packageSize`) REFERENCES `rmReleasePackageSizes`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `inventoryTransactions` ADD CONSTRAINT `inventoryTransactions_colorId_fkey` FOREIGN KEY (`colorId`) REFERENCES `colors`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `grn` ADD CONSTRAINT `grn_productId_fkey` FOREIGN KEY (`productId`) REFERENCES `products`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `inventoryTransactions` ADD CONSTRAINT `inventoryTransactions_packageSize_fkey` FOREIGN KEY (`packageSize`) REFERENCES `rmReleasePackageSizes`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `grn` ADD CONSTRAINT `grn_qcBy_fkey` FOREIGN KEY (`qcBy`) REFERENCES `qcInspectors`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `inventoryTransactions` ADD CONSTRAINT `inventoryTransactions_productId_fkey` FOREIGN KEY (`productId`) REFERENCES `products`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;

@@ -13,6 +13,7 @@ const villageRoutes = require('./village.route');
 const employeeRoutes = require('./employee.route');
 const qcRoutes = require('./qc.route');
 const statsRoutes = require('./stats.route');
+const inventoryTransactionRoutes = require('./inventoryTransactions.route');
 
 /** HEALTH CHECK */
 routes.get(`${process.env.API_VERSION_PREFIX}/`, (req, res) => res.status(200).json({ message: 'service is up and running' }));
@@ -24,6 +25,9 @@ routes.use(`${process.env.API_VERSION_PREFIX}/packageSizes`, packageSizesRoutes)
 routes.use(`${process.env.API_VERSION_PREFIX}/products`, productRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/rmRelease`, rmReleaseRoutes);
 routes.use(`${process.env.API_VERSION_PREFIX}/productCollection`, productCollectionRoutes);
+
+routes.use(`${process.env.API_VERSION_PREFIX}/inventory-transaction`, inventoryTransactionRoutes);
+
 routes.use(`${process.env.API_VERSION_PREFIX}/grn`, grnProcessRoutes);
 
 //admin portal routes

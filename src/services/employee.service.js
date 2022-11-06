@@ -6,10 +6,10 @@ const prisma = new PrismaClient({
     // log: ['query', 'info', 'warn', 'error'],
 });
 
-const getAllEmployees = async () => {
+const getAllEmployees = async (type) => {
     try {
         const employees = await prisma.users.findMany({
-            where: { userType: 'GENERAL_EMPLOYEE' },
+            where: { userType: { in: type } },
             select: {
                 id: true,
                 name: true,

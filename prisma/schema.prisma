@@ -10,28 +10,20 @@ datasource db {
 }
 
 model users {
-  id                         Int                          @id @default(autoincrement())
-  name                       String                       @db.VarChar(255)
-  email                      String                       @unique @db.VarChar(255)
-  password                   String                       @db.VarChar(200)
-  userType                   USER_TYPES                   @default(GENERAL_EMPLOYEE)
-  team                       teams?                       @relation(fields: [teamId], references: [id])
-  teamId                     Int?                         @db.Int()
-  status                     USER_STATUS                  @default(INACTIVE)
-  createdAt                  DateTime?                    @default(now()) @db.DateTime(3)
-  updatedAt                  DateTime?                    @default(now()) @db.DateTime(3)
-  rmRelease                  rmRelease[]
-  finishedProductsCollection finishedProductsCollection[]
-  grn                        grn[]
-}
-
-model qcInspectors {
-  id        Int         @id @default(autoincrement())
-  name      String      @db.VarChar(255)
-  email     String      @unique @db.VarChar(255)
-  status    USER_STATUS @default(ACTIVE)
-  createdAt DateTime?   @default(now()) @db.DateTime(3)
-  grn       grn[]
+  id                            Int                          @id @default(autoincrement())
+  name                          String                       @db.VarChar(255)
+  email                         String                       @unique @db.VarChar(255)
+  password                      String                       @db.VarChar(200)
+  userType                      USER_TYPES                   @default(GENERAL_EMPLOYEE)
+  team                          teams?                       @relation(fields: [teamId], references: [id])
+  teamId                        Int?                         @db.Int()
+  status                        USER_STATUS                  @default(INACTIVE)
+  createdAt                     DateTime?                    @default(now()) @db.DateTime(3)
+  updatedAt                     DateTime?                    @default(now()) @db.DateTime(3)
+  rmRelease                     rmRelease[]
+  finishedProductsCollection    finishedProductsCollection[]
+  IssuerInventoryTransactions   inventoryTransactions[]      @relation("issuerUser")
+  ReceiverInventoryTransactions inventoryTransactions[]      @relation("receiverUser")
 }
 
 model teams {
@@ -45,6 +37,8 @@ enum USER_TYPES {
   ADMIN
   TEAM_LEAD
   GENERAL_EMPLOYEE
+  QC_USER
+  INVENTORY_RECEPTIONIST
 }
 
 enum USER_STATUS {
@@ -62,7 +56,7 @@ model products {
   subCategoryId              Int                          @db.Int()
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
-  grn                        grn[]
+  inventoryTransactions      inventoryTransactions[]
 }
 
 model productCategories {
@@ -84,7 +78,7 @@ model colors {
   colorCategoryId            Int                          @db.Int()
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
-  grn                        grn[]
+  inventoryTransactions      inventoryTransactions[]
 }
 
 model colorCategories {
@@ -110,6 +104,15 @@ model artisans {
   villageId                  Int                          @db.Int()
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
+  inventoryTransactions      inventoryTransactions[]
+}
+
+model rmReleasePackageSizes {
+  id                    Int                     @id @default(autoincrement())
+  packageSizeName       String                  @db.VarChar(255)
+  packageWeight         Float                   @db.Float()
+  rmRelease             rmRelease[]
+  inventoryTransactions inventoryTransactions[]
 }
 
 model rmRelease {
@@ -130,14 +133,6 @@ model rmRelease {
   timestamp             DateTime              @default(now()) @db.DateTime(3)
 }
 
-model rmReleasePackageSizes {
-  id              Int         @id @default(autoincrement())
-  packageSizeName String      @db.VarChar(255)
-  packageWeight   Float       @db.Float()
-  rmRelease       rmRelease[]
-  grn             grn[]
-}
-
 model finishedProductsCollection {
   id             Int      @id @default(autoincrement())
   user           users    @relation(fields: [collectedBy], references: [id])
@@ -154,11 +149,14 @@ model finishedProductsCollection {
   timestamp      DateTime @default(now()) @db.DateTime(3)
 }
 
-model grn {
-  id      Int       @id @default(autoincrement())
-  user    users     @relation(fields: [userId], references: [id])
-  userId  Int       @db.Int()
-  grnType GRN_TYPES
+model inventoryTransactions {
+  id              Int                         @id @default(autoincrement())
+  transactionType INVENTORY_TRANSACTION_TYPES
+
+  Issuer   users? @relation("issuerUser", fields: [issuer], references: [id])
+  Receiver users? @relation("receiverUser", fields: [receiver], references: [id])
+  issuer   Int    @db.Int()
+  receiver Int    @db.Int()
 
   color                 colors                 @relation(fields: [colorId], references: [id])
   colorId               Int                    @db.Int()
@@ -166,16 +164,13 @@ model grn {
   packageSize           Int?                   @db.Int()
   product               products?              @relation(fields: [productId], references: [id])
   productId             Int?                   @db.Int()
+  artisan               artisans?              @relation(fields: [artisanId], references: [id])
+  artisanId             Int?                   @db.Int()
   quantity              Float                  @db.Float()
-
-  qcInspector qcInspectors? @relation(fields: [qcBy], references: [id])
-  qcBy        Int?          @db.Int()
-  isRejected  Boolean?      @default(false)
-
-  timestamp DateTime @default(now()) @db.DateTime(3)
+  timestamp             DateTime               @default(now()) @db.DateTime(3)
 }
 
-enum GRN_TYPES {
+enum INVENTORY_TRANSACTION_TYPES {
   IN
   OUT
 }

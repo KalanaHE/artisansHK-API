@@ -82,13 +82,6 @@ const seed = async () => {
                 skipDuplicates: true,
             });
             console.info('artisans added!');
-
-            const _createdQcInspectors = await prisma.qcInspectors.createMany({
-                data: qcInspectors,
-                skipDuplicates: true,
-            });
-            console.info('qc inspectors added!');
-
         });
     } catch (e) {
         process.exit(1);
