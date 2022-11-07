@@ -166,6 +166,8 @@ model inventoryTransactions {
   productId             Int?                   @db.Int()
   artisan               artisans?              @relation(fields: [artisanId], references: [id])
   artisanId             Int?                   @db.Int()
+  isRejected            Boolean?               @default(false)
+  isTrainee             Boolean?               @default(false)
   quantity              Float                  @db.Float()
   timestamp             DateTime               @default(now()) @db.DateTime(3)
 }
