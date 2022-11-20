@@ -10,20 +10,22 @@ datasource db {
 }
 
 model users {
-  id                            Int                          @id @default(autoincrement())
-  name                          String                       @db.VarChar(255)
-  email                         String                       @unique @db.VarChar(255)
-  password                      String                       @db.VarChar(200)
-  userType                      USER_TYPES                   @default(GENERAL_EMPLOYEE)
-  team                          teams?                       @relation(fields: [teamId], references: [id])
-  teamId                        Int?                         @db.Int()
-  status                        USER_STATUS                  @default(INACTIVE)
-  createdAt                     DateTime?                    @default(now()) @db.DateTime(3)
-  updatedAt                     DateTime?                    @default(now()) @db.DateTime(3)
-  rmRelease                     rmRelease[]
-  finishedProductsCollection    finishedProductsCollection[]
-  IssuerInventoryTransactions   inventoryTransactions[]      @relation("issuerUser")
-  ReceiverInventoryTransactions inventoryTransactions[]      @relation("receiverUser")
+  id                                    Int                          @id @default(autoincrement())
+  name                                  String                       @db.VarChar(255)
+  email                                 String                       @unique @db.VarChar(255)
+  password                              String                       @db.VarChar(200)
+  userType                              USER_TYPES                   @default(GENERAL_EMPLOYEE)
+  team                                  teams?                       @relation(fields: [teamId], references: [id])
+  teamId                                Int?                         @db.Int()
+  status                                USER_STATUS                  @default(INACTIVE)
+  createdAt                             DateTime?                    @default(now()) @db.DateTime(3)
+  updatedAt                             DateTime?                    @default(now()) @db.DateTime(3)
+  rmRelease                             rmRelease[]
+  IssuerInventoryTransactions           inventoryTransactions[]      @relation("issuerUser")
+  ReceiverInventoryTransactions         inventoryTransactions[]      @relation("receiverUser")
+  QcByInventoryTransactions             inventoryTransactions[]      @relation("qcByUser")
+  QcByFinishedProductCollections        finishedProductsCollection[] @relation("qcByUser")
+  CollectedByFinishedProductCollections finishedProductsCollection[] @relation("collectedByUser")
 }
 
 model teams {
@@ -134,7 +136,7 @@ model rmRelease {
 
 model finishedProductsCollection {
   id             Int      @id @default(autoincrement())
-  user           users    @relation(fields: [collectedBy], references: [id])
+  User           users    @relation("collectedByUser", fields: [collectedBy], references: [id])
   collectedBy    Int      @db.Int()
   color          colors   @relation(fields: [colorId], references: [id])
   colorId        Int      @db.Int()
@@ -144,31 +146,36 @@ model finishedProductsCollection {
   artisan        artisans @relation(fields: [collectedFrom], references: [id])
   collectedFrom  Int      @db.Int()
   geoCoordinates String?  @db.VarChar(255)
+  isRejected     Boolean?
+  QCBy           users?   @relation("qcByUser", fields: [qcBy], references: [id])
+  qcBy           Int?     @db.Int()
+  isTrainee      Boolean?
   timestamp      DateTime @default(now()) @db.DateTime(3)
 }
 
 model inventoryTransactions {
-  id              Int                         @id @default(autoincrement())
-  transactionType INVENTORY_TRANSACTION_TYPES
-
-  Issuer   users? @relation("issuerUser", fields: [issuer], references: [id])
-  Receiver users? @relation("receiverUser", fields: [receiver], references: [id])
-  issuer   Int    @db.Int()
-  receiver Int    @db.Int()
-
-  color                  colors                 @relation(fields: [colorId], references: [id])
-  colorId                Int                    @db.Int()
-  rmReleasePackageSizes  rmReleasePackageSizes? @relation(fields: [packageSize], references: [id])
-  packageSize            Int?                   @db.Int()
-  product                products?              @relation(fields: [productId], references: [id])
-  productId              Int?                   @db.Int()
-  collectedProductWeight Float?                 @db.Float()
-  artisan                artisans?              @relation(fields: [artisanId], references: [id])
-  artisanId              Int?                   @db.Int()
-  isRejected             Boolean?               @default(false)
-  isTrainee              Boolean?               @default(false)
-  quantity               Float                  @db.Float()
-  timestamp              DateTime               @default(now()) @db.DateTime(3)
+  id                     Int                         @id @default(autoincrement())
+  transactionType        INVENTORY_TRANSACTION_TYPES
+  isReturningRm          Boolean
+  Issuer                 users?                      @relation("issuerUser", fields: [issuer], references: [id])
+  Receiver               users?                      @relation("receiverUser", fields: [receiver], references: [id])
+  issuer                 Int                         @db.Int()
+  receiver               Int                         @db.Int()
+  color                  colors                      @relation(fields: [colorId], references: [id])
+  colorId                Int                         @db.Int()
+  rmReleasePackageSizes  rmReleasePackageSizes?      @relation(fields: [packageSize], references: [id])
+  packageSize            Int?                        @db.Int()
+  product                products?                   @relation(fields: [productId], references: [id])
+  productId              Int?                        @db.Int()
+  collectedProductWeight Float?                      @db.Float()
+  artisan                artisans?                   @relation(fields: [artisanId], references: [id])
+  artisanId              Int?                        @db.Int()
+  isRejected             Boolean?
+  QCBy                   users?                      @relation("qcByUser", fields: [qcBy], references: [id])
+  qcBy                   Int?                        @db.Int()
+  isTrainee              Boolean?
+  quantity               Float                       @db.Float()
+  timestamp              DateTime                    @default(now()) @db.DateTime(3)
 }
 
 enum INVENTORY_TRANSACTION_TYPES {

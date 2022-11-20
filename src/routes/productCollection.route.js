@@ -5,6 +5,7 @@ const { createProductCollectionRecord } = require('../controllers/productCollect
 
 const router = express.Router();
 
-router.route('/').post([celebrate(validations.productCollection.productCollection)], createProductCollectionRecord);
+// router.route('/').post([celebrate(validations.productCollection.productCollection)], createProductCollectionRecord);
+router.route('/').post(createProductCollectionRecord);
 
 module.exports = router;
