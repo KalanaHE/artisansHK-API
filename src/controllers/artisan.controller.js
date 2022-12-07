@@ -14,4 +14,10 @@ const getAllArtisans = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { searchArtisanByEmpId, getAllArtisans };
+const editArtisan = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const data = await artisanService.editArtisan(body);
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { searchArtisanByEmpId, getAllArtisans, editArtisan };

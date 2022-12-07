@@ -18,7 +18,7 @@ const searchArtisanByEmpId = async (employeeId) => {
 
 const getAllArtisans = async () => {
     try {
-        const artisans = await prisma.artisans.findMany();
+        const artisans = await prisma.artisans.findMany({ include: { village: true } });
 
         return response(httpStatus.OK, 'Success', artisans);
     } catch (error) {
@@ -26,4 +26,15 @@ const getAllArtisans = async () => {
     }
 };
 
-module.exports = { searchArtisanByEmpId, getAllArtisans };
+const editArtisan = async (info) => {
+    try {
+        const { id, ...data } = info;
+        const artisan = await prisma.artisans.update({ where: { id }, data });
+
+        return response(httpStatus.OK, 'Updated', artisan);
+    } catch (error) {
+        return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
+    }
+};
+
+module.exports = { searchArtisanByEmpId, getAllArtisans, editArtisan };

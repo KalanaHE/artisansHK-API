@@ -104,6 +104,7 @@ model artisans {
   name                       String                       @db.VarChar(255)
   village                    villages                     @relation(fields: [villageId], references: [id])
   villageId                  Int                          @db.Int()
+  isDeleted                  Boolean                      @default(false)
   rmRelease                  rmRelease[]
   finishedProductsCollection finishedProductsCollection[]
   inventoryTransactions      inventoryTransactions[]
