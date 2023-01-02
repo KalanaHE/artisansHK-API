@@ -7,4 +7,10 @@ const createInventoryTransactionRecord = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { createInventoryTransactionRecord };
+const getArtisanWiseGrnProducts = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const data = await inventoryTransactionService.getArtisanWiseGrnProducts(body);
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { createInventoryTransactionRecord, getArtisanWiseGrnProducts };

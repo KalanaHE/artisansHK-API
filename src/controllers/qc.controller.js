@@ -6,4 +6,10 @@ const getAllQualityInspectors = asyncHandler(async (req, res) => {
     return res.status(data.statusCode).json(data);
 });
 
-module.exports = { getAllQualityInspectors };
+const regularizeGrn = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const data = await qcService.regularizeGrn(body);
+    return res.status(data.statusCode).json(data);
+});
+
+module.exports = { getAllQualityInspectors, regularizeGrn };

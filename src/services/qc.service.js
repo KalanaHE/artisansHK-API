@@ -16,4 +16,21 @@ const getAllQualityInspectors = async () => {
     }
 };
 
-module.exports = { getAllQualityInspectors };
+const regularizeGrn = async (info) => {
+    try {
+        const { transactionId, rejectCount } = info;
+
+        const originalData = await prisma.inventoryTransactions.findUnique({ where: { id: transactionId } });
+      
+
+        if(originalData.quantity===1){
+
+
+        }
+
+    } catch (error) {
+        return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
+    }
+};
+
+module.exports = { getAllQualityInspectors, regularizeGrn };

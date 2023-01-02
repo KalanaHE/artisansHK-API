@@ -84,6 +84,9 @@ const seed = async () => {
             console.info('artisans added!');
         });
     } catch (e) {
+        console.log('====================================');
+        console.log(e);
+        console.log('====================================');
         process.exit(1);
     } finally {
         await prisma.$disconnect();

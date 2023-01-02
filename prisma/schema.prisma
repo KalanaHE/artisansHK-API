@@ -22,6 +22,7 @@ model users {
   updatedAt                             DateTime?                    @default(now()) @db.DateTime(3)
   rmRelease                             rmRelease[]
   IssuerInventoryTransactions           inventoryTransactions[]      @relation("issuerUser")
+  QcByAfterGrnInventoryTransactions     inventoryTransactions[]      @relation("qcByUserAfterGrn")
   ReceiverInventoryTransactions         inventoryTransactions[]      @relation("receiverUser")
   QcByInventoryTransactions             inventoryTransactions[]      @relation("qcByUser")
   QcByFinishedProductCollections        finishedProductsCollection[] @relation("qcByUser")
@@ -176,6 +177,9 @@ model inventoryTransactions {
   qcBy                   Int?                        @db.Int()
   isTrainee              Boolean?
   quantity               Float                       @db.Float()
+  isRejectedAfterGrnIn   Boolean                     @default(false)
+  QCByAfterGrn           users?                      @relation("qcByUserAfterGrn", fields: [rejectedByAfterGrnIn], references: [id])
+  rejectedByAfterGrnIn   Int?                        @db.Int()
   timestamp              DateTime                    @default(now()) @db.DateTime(3)
 }
 
