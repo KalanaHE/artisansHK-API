@@ -8,16 +8,10 @@ const prisma = new PrismaClient({
 
 const createProductCollectionRecord = async (data) => {
     try {
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
         const createdRecord = await prisma.finishedProductsCollection.create({ data });
 
         return response(httpStatus.OK, 'Success', createdRecord);
     } catch (error) {
-        console.log('====================================');
-        console.log(error);
-        console.log('====================================');
         return response(httpStatus.INTERNAL_SERVER_ERROR, error.message, null, error);
     }
 };

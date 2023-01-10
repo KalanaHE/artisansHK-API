@@ -22,6 +22,10 @@ const regularizeGrn = async (info) => {
 
         const originalData = await prisma.inventoryTransactions.findUnique({ where: { id: transactionId } });
 
+        if (rejectCount > originalData.quantity || rejectCount < 0) {
+            return response(httpStatus.INTERNAL_SERVER_ERROR, 'Reject count is greater than original quantity/reject count not valid', null, null);
+        }
+
         if (originalData.quantity === 1) {
             await prisma.inventoryTransactions.update({
                 where: { id: transactionId },
@@ -30,11 +34,11 @@ const regularizeGrn = async (info) => {
 
             return response(httpStatus.OK, 'Success', {});
         } else {
-            let temp = [];
+            // let temp = [];
 
-            for (let index = 0; index < originalData.quantity; index++) {
-                temp.push(originalData);
-            }
+            // for (let index = 0; index < originalData.quantity; index++) {
+            //     temp.push(originalData);
+            // }
 
             // if reject count is 1
             if (rejectCount === 1) {
@@ -51,7 +55,7 @@ const regularizeGrn = async (info) => {
                             productId: originalData.productId,
                             collectedProductWeight: originalData.collectedProductWeight,
                             artisanId: originalData.artisanId,
-                            isRejected: originalData.isRejected, // <== modification
+                            isRejected: originalData.isRejected,
                             qcBy: originalData.qcBy,
                             isTrainee: originalData.isTrainee,
                             quantity: 1, // <== modification
@@ -87,7 +91,7 @@ const regularizeGrn = async (info) => {
                             productId: originalData.productId,
                             collectedProductWeight: originalData.collectedProductWeight,
                             artisanId: originalData.artisanId,
-                            isRejected: originalData.isRejected, // <== modification
+                            isRejected: originalData.isRejected,
                             qcBy: originalData.qcBy,
                             isTrainee: originalData.isTrainee,
                             quantity: rejectCount, // <== modification

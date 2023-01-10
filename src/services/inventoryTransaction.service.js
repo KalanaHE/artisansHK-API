@@ -20,8 +20,21 @@ const getArtisanWiseGrnProducts = async (data) => {
     try {
         const { artisanEmployeeId } = data;
 
+        //today ending datetime
+        const todayEndDate = new Date();
+        //7 dayes befor start date
+        const sevenDaysBeforeStartDate = new Date(new Date().setDate(new Date().getDate() - 7));
+
         const transactionsData = await prisma.inventoryTransactions.findMany({
-            where: { transactionType: 'IN', artisan: { employeeId: artisanEmployeeId } },
+            where: {
+                transactionType: 'IN',
+                artisan: { employeeId: artisanEmployeeId },
+                OR: { isRejectedAfterGrnIn: false, isRejected: false },
+                timestamp: {
+                    gte: sevenDaysBeforeStartDate,
+                    lte: todayEndDate,
+                },
+            },
             include: { artisan: { include: { village: true } }, product: { include: { category: true } }, Issuer: true, Receiver: true },
         });
 
